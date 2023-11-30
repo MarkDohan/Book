@@ -328,7 +328,7 @@ ul a:hover, .logo:hover{
         margin-left: 25%;
     }
 }
-@media screen and (max-width:425px){
+@media screen and (max-width:430px){
     ul{
         display: none;
     }
