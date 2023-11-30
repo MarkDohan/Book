@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +15,20 @@
     <div class="wrapper">
         <header>
             <a class="logo" href="index.html">MD.</a>
-    
+
+            <div class="phone">
+                <div class="container" onclick="myFunction(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                    <div class="part">
+                        <a href="index.html">Verses</a>
+                        <a href="index.html">God's Promises</a>
+                        <a href="index.html">Prophecies about Jesus</a>
+                    </div>
+                </div>
+            </div>
+            
             <ul>
                 <a href="index.html">Verses</a>
                 <a href="index.html">God's Promises</a>
@@ -22,9 +36,12 @@
             </ul>
         </header>
         <main>
+        
+
+
             <div class="main-with-sidebar">
                 <div class="main-content">
-                    <img src="photo.png" alt="">
+                    <img src="photo.png" alt="" class="prov">
                     <div class="two-columns">
                         <section class="one">
                             <h1>Bible</h1> <br>
@@ -110,7 +127,7 @@
 
             <div class="three-colums">
                 <div class="bottom-columns">
-                    <img src="01.jpg" alt="" class="image01">
+                    <img src="01.jpg" alt="" class="image01" id="one">
                     <div class="text">
                         <h1>01</h1>
                         <h2>Ten Commandments</h2>
@@ -118,7 +135,7 @@
                     </div>
                 </div>
                 <div class="bottom-columns">
-                    <img src="02.jpg" alt="" class="image01">
+                    <img src="02.jpg" alt="" class="image01" id="two">
                     <div class="text">
                         <h1>02</h1>
                         <h2>Disciples</h2>
@@ -126,7 +143,7 @@
                     </div>
                 </div>
                 <div class="bottom-columns">
-                    <img src="03.jpg" alt="" class="image01">
+                    <img src="03.jpg" alt="" class="image01" id="three">
                     <div class="text">
                         <h1>03</h1>
                         <h2>Miracles</h2>
