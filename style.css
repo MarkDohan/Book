@@ -408,6 +408,17 @@ ul a:hover, .logo:hover{
       font-size: 1.5rem; 
     }
 }
+@media screen and (max-width:390px){
+    .part{
+        margin-top: -22%;
+    }
+    .three-colums{
+        margin-top: 210%;
+    }
+    .text h2{
+        font-size: 1.2rem;
+    }
+}
 @media screen and (max-width:375px){
     .part{
         margin-top: -20%;
