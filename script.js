@@ -1,4 +1,9 @@
-function myFunction(x) {
+function openNav(){
+    document.getElementById("myNav").style.width = "100%";
+    document.getElementsByClassName("wrapper").style.display = "fixed";
     x.classList.toggle("change");
-    x.classList.toggle("menu");
-  }
+}
+
+function closeNav(){
+    document.getElementById("myNav").style.width = "0%";
+}

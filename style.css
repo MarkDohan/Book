@@ -14,62 +14,66 @@ header{
     align-items: center;
     height: 7rem;
 }
-ul{
-     display: flex;
+.menu{
+    font-size: 1.3rem;
 }
-.container{
-    display: inline-block;
-    cursor: pointer;
-    margin: 2%;
-    
-}
-.bar1, .bar2, .bar3 {
+.bar1, .bar2, .bar3{
     width: 35px;
     height: 5px;
-    background-color: #fff;
+    background-color: #000;
     margin: 6px 0;
     transition: 0.4s;
     border-radius: 3px;
-    z-index: 1;
 }
-.change .bar1 {
+.change .bar1{
     transform:  translate(0 , 11px) rotate(-45deg);
 }
-.change .bar2 {
+.change .bar2{
     transform: translateX(10px);
     opacity: 0;
 }
-.change .bar3 {
+.change .bar3{
     transform: translate(0 , -11px) rotate(45deg);
 }
-.part{
-    z-index: 2;
-    background-color: #fff;
-    position: fixed;
+.overlay{
     height: 100%;
-    width: 72%;
-    margin-left: 100%;
-    margin-top: -17.5%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
 }
-.part a{
-    font-size: 1.2rem;
+.overlay-content{
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+}
+.overlay a{
+    padding: 28px 12%;
+    text-decoration: none;
+    font-size: 1.5rem;
     color: #fff;
     display: block;
-    margin: -40%;
-    height: 2rem;
+    transition: 0.3s;
 }
-  
-.menu .part{
-    margin-left: -50%;
-    height: 110%;
-    transition: all .5s ease;
-    background: rgba(0, 0, 0, 0.7);
+.overlay a:hover, .overlay a:focus{
+    color: #fff;
 }
-.menu .part a{
-    margin-top: 50%;
-    margin-left: 10%;
+.overlay .closebtn{
+    position: absolute;
+    margin-top: -2.5%;
+    margin-right: -5.4%;
+    transform: scale(1.5);
 }
-
+ul{
+     display: flex;
+}
 ul a{
     color: #4d4d4d;
     font-size: 2rem;
@@ -208,33 +212,14 @@ ul a:hover, .logo:hover{
 .reference:hover{
     background-color: hsl(240, 100%, 5%);
 }
-.container{
-    display: inline-block;
-    cursor: pointer;
-}
-.bar1, .bar2, .bar3{
-    width: 35px;
-    height: 5px;
-    background-color: #000;
-    margin: 6px 0;
-    transition: 0.4s;
-    border-radius: 3px;
-}
-.change .bar1{
-    transform:  translate(0 , 11px) rotate(-45deg);
-}
-.change .bar2{
-    transform: translateX(10px);
-    opacity: 0;
-}
-.change .bar3{
-    transform: translate(0 , -11px) rotate(45deg);
-}
 /* Screens */
 @media screen and (max-width:2560px){
-    .phone{
+    ul a{
+        font-size: 1.7rem;
+       }
+    .menu{
         display: none;
-    }
+    } 
 }
 @media screen and (max-width:1920px){
    ul a{
@@ -329,11 +314,11 @@ ul a:hover, .logo:hover{
     }
 }
 @media screen and (max-width:430px){
+    .menu{
+        display: block;
+    }
     ul{
         display: none;
-    }
-    .phone{
-        display: block;
     }
     .logo{
         font-size: 2.5rem;
@@ -407,11 +392,16 @@ ul a:hover, .logo:hover{
       height: 5rem; 
       font-size: 1.5rem; 
     }
+    .overlay a{
+        font-size: 20px
+    }
+    .overlay .closebtn{
+        font-size: 2rem;
+        top: 1rem;
+        right: 1.8rem;
+    }
 }
 @media screen and (max-width:390px){
-    .part{
-        margin-top: -22%;
-    }
     .three-colums{
         margin-top: 210%;
     }
@@ -420,9 +410,6 @@ ul a:hover, .logo:hover{
     }
 }
 @media screen and (max-width:375px){
-    .part{
-        margin-top: -20%;
-    }
     .two{
         width: 80%;
     }
@@ -434,13 +421,6 @@ ul a:hover, .logo:hover{
     }
 }
 @media screen and (max-width:320px){
-    .part{
-        margin-top: -23%;
-        width: 73%;
-    }
-    .part a{
-        font-size: 1rem;
-    }
     .three-colums{
         margin-top: 260%;
     }
