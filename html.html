@@ -1,0 +1,89 @@
+You can achieve this by adding an event listener to your menu toggle button and toggling a CSS class on the body element to disable scrolling when the menu is open. Here's a basic example of how you can do it using JavaScript:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stop Scrolling on Menu Open</title>
+<style>
+    .menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        background-color: #f4f4f4;
+        overflow-y: auto;
+    }
+
+    .menu.open {
+        display: block;
+    }
+
+    .menu-content {
+        padding: 20px;
+    }
+
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+    .overlay.show {
+        display: block;
+    }
+</style>
+</head>
+<body>
+
+<button id="menu-toggle">Toggle Menu</button>
+
+<div class="menu" id="menu">
+    <div class="menu-content">
+        <h2>Menu</h2>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+            <li>Item 5</li>
+        </ul>
+    </div>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    const overlay = document.getElementById('overlay');
+
+    menuToggle.addEventListener('click', function() {
+        menu.classList.toggle('open');
+        overlay.classList.toggle('show');
+        
+        if (menu.classList.contains('open')) {
+            // Disable scrolling when menu is open
+            document.body.style.overflow = 'hidden';
+        } else {
+            // Enable scrolling when menu is closed
+            document.body.style.overflow = '';
+        }
+    });
+</script>
+
+</body>
+</html>
+```
+
+
+This code sets up a basic menu that can be toggled open and closed with a button. When the menu is open, it adds a CSS class to the body element to disable scrolling, and when the menu is closed, it removes that class to re-enable scrolling.
